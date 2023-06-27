@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Patient Database</title>
+    <style>
+        /* Add some basic styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: rgb(66, 239, 199);
+        }
+        h1 {
+            text-align: center;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h1>Patient Database Management</h1>
+
+    <form id="patientForm">
+        <input type="text" id="nameInput" placeholder="Name" required>
+        <input type="text" id="ageInput" placeholder="Age" required>
+        <input type="text" id="diagnosisinput" placeholder="diagnosies status" required>
+        <input type="number" id="idinput" placeholder="id" required>
+        <input type="tel" id="mobinput" placeholder="num"required>
+        <input type="text" id="addressinput" placeholder="address">
+        <input type="text" id="genderinput" placeholder="gender" required>
+        <input type="text" id="consultinput" placeholder="consult(Yes/No)">
+        <input type="text" id="notesinput" placeholder="consult"> 
+        <button type="submit">Add Patient</button>
+    </form>
+
+    <table id="patientTable">
+        <thead>
+            <tr>
+                <th>patient Name</th>
+                <th>patient Age</th>
+                <th>patient diagnosies status</th>
+                <th>patient id</th>
+                <th>patient mobilenumber</th>
+                <th>patient address</th>
+                <th>patient gender</th>
+                <th>Whether they visited the other doctors</th>
+                <th>notes</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <script>
+        var patients = [];
+        function addPatient(event) {
+            event.preventDefault();
+
+            var name = document.getElementById('nameInput').value;
+            var age = document.getElementById('ageInput').value;
+            var diagnosis=document.getElementById('diagnosisinput').value;
+            var id=document.getElementById('idinput').value;
+            var mobile=document.getElementById('mobinput').value;
+            var address=document.getElementById('addressinput').value;
+            var gender=document.getElementById('genderinput').value;
+            var consult=document.getElementById('consultinput').value;
+            var motes=document.getElementById('notes.input').value;
+            var patient = {
+                name: name,
+                age: age,
+                diagnosis:diagnosis,
+                id:id,
+                mobile:mobile,
+                address:address,
+                gender:gender,
+                consult:consult,
+                notes:notes
+            };
+
+            patients.push(patient);
+
+            document.getElementById('nameInput').value = '';
+            document.getElementById('ageInput').value = '';
+            document.getElementById('diagnosisinput').value='';
+            document.getElementById('idinput').value='';
+            document.getElementById('mobiinput').value='';
+            document.getElementById('addressinput').value='';
+            document.getElementById('genderinput').value='';
+            document.getElementById('consultinput').value='';
+            document.getElementById('notesinput').value='';
+
+            renderPatients();
+        }
+
+        function renderPatients() {
+            var tableBody = document.querySelector('#patientTable tbody');
+            tableBody.innerHTML = '';
+
+            patients.forEach(function(patient) {
+                var row = document.createElement('tr');
+                var nameCell = document.createElement('td');
+                nameCell.textContent = patient.name;
+                var ageCell = document.createElement('td');
+                ageCell.textContent = patient.age;
+                var diagnosisell =document.createElement('td');
+                diagnosiscell.textContent=patient.disease;
+                var idCell = document.createElement('td');
+                idCell.textContent = patient.age;
+                var mobiCell = document.createElement('td');
+                mobiCell.textContent = patient.age;
+                var addressCell = document.createElement('td');
+                addressCell.textContent = patient.age;
+                var genderCell = document.createElement('td');
+                genderCell.textContent = patient.age;
+                var consultCell = document.createElement('td');
+                consultCell.textContent = patient.age;
+                var notesCell = document.createElement('td');
+                notesCell.textContent = patient.age;
+                row.appendChild(nameCell);
+                row.appendChild(ageCell);
+                row.appendChild(diagnosiscell);
+                row.appendChild(idCell);
+                row.appendChild(mobiCell);
+                row.appendChild(addressCell);
+                row.appendChild(genderCell);
+                row.appendChild(consultCell);
+                row.appendChild(notesCell);
+                tableBody.appendChild(row);
+            });
+        }
+
+        document.getElementById('patientForm').addEventListener('submit', addPatient);
+    </script>

@@ -1,0 +1,29 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form-container {
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid #653131;
+    border-radius: 5px;
+}
+
+h1 {
+    text-align: center;
+}
+
+input {
+    display: block;
+    margin-bottom: 10px;
+    padding: 5px;
+    width: 100%;
+}
+
+button {
+    padding: 10px;
+    width: 100%;
+}

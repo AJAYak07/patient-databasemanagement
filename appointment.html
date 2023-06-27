@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Appointment Booking</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Book an Appointment</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="doctors.html">Doctors</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="appointment.html">Appointment</a></li>
+        </ul>
+    </nav>
+
+    <section class="appointment-form">
+        <h2>Appointment Details</h2>
+        <form id="appointment-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="doctor">Select Doctor:</label>
+            <select id="doctor" name="doctor" required>
+                <option value="">-- Select Doctor --</option>
+                <!-- Populate options dynamically using JavaScript -->
+            </select>
+
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" required>
+
+            <input type="submit" value="Book Appointment">
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Hospital Website. All rights reserved.</p>
+    </footer>
+
+    <script src="fetch_doctors.js"></script>
+    <script src="book_appointment.js"></script>
+</body>
+</html>
